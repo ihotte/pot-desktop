@@ -1,5 +1,4 @@
 use crate::error::Error;
-use dirs::config_dir;
 use log::info;
 use reqwest_dav::{Auth, ClientBuilder, Depth};
 use std::io::Write;

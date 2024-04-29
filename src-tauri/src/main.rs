@@ -13,6 +13,7 @@ mod server;
 mod system_ocr;
 mod tray;
 mod updater;
+mod util;
 mod window;
 
 use backup::*;
@@ -32,6 +33,7 @@ use tauri::Manager;
 use tauri_plugin_log::LogTarget;
 use tray::*;
 use updater::check_update;
+use util::config_dir;
 use window::config_window;
 use window::updater_window;
 
