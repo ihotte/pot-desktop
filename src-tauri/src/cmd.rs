@@ -107,6 +107,7 @@ pub fn invoke_plugin(
     lang: Option<&str>,
     needs: HashMap<String, String>,
 ) -> Result<Value, String> {
+	use util::config_dir;
     use libloading;
     use std::env::consts::OS;
 
@@ -273,7 +274,7 @@ pub fn install_plugin(path_list: Vec<String>, plugin_type: &str) -> Result<i32, 
                 "Invalid Plugin: file name must start with [plugin]".into(),
             ));
         }
-        let config_path = config_dir().unwrap();
+        let config_path = util::config_dir().unwrap();
         let config_path = config_path.join(APP.get().unwrap().config().tauri.bundle.identifier.clone());
         let config_path = config_path.join("plugins");
         let config_path = config_path.join(plugin_type);
